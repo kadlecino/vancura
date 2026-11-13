@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lubomír Vančura – instalatér a topenář | Brno a okolí</title>
+<meta name="description" content="Vodoinstalatérské a topenářské práce v Brně a okolí. V oboru od roku 1997. Nezávazná kalkulace zdarma. Tel. 774 568 769.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+ --navy:#0f2238;--blue:#0a5fa8;--blue-d:#084b86;--blue-l:#e8f2fb;--blue-ll:#f4f9fd;
+ --sun:#ffc425;--sun-d:#f0b000;--muted:#4d5f73;--line:#d5e2ef;--white:#fff;
+ --f:'Figtree',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:var(--f);color:var(--navy);background:#fff;line-height:1.6;font-size:17px;overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--blue)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3,h4{font-weight:800;line-height:1.15;margin:0;letter-spacing:-.015em}
+h2{font-size:clamp(28px,6.5vw,40px);margin-bottom:12px}
+.kick{display:inline-block;font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-l);padding:5px 12px;border-radius:99px;margin:0 0 14px}
+.sub{color:var(--muted);max-width:640px;margin:0 0 32px}
+section{padding:56px 0}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 24px;font-family:var(--f);font-weight:700;font-size:17px;text-decoration:none;border:2px solid transparent;cursor:pointer;border-radius:10px;line-height:1.2}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-s{background:var(--sun);color:var(--navy);box-shadow:0 2px 0 var(--sun-d)}.btn-s:hover{background:#ffd04f}
+.btn-b{background:var(--blue);color:#fff}.btn-b:hover{background:var(--blue-d)}
+.btn-o{border-color:var(--blue);color:var(--blue);background:#fff}.btn-o:hover{background:var(--blue-l)}
+
+/* top bar + header */
+.topbar{background:var(--navy);color:#cfdcea;font-size:14px}
+.topbar .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:8px;padding-bottom:8px}
+.topbar span.t2{display:none}
+.topbar .wrap>span:first-child{display:none}
+.topbar .wrap{justify-content:center;text-align:center}
+.logo>span{white-space:nowrap}.logo small{display:none}
+header{position:sticky;top:0;z-index:30;background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:20px;line-height:1.1;letter-spacing:-.01em}
+.logo svg{width:34px;height:34px;flex:none}
+.logo small{display:block;font-weight:600;font-size:12px;color:var(--muted);letter-spacing:0}
+nav{display:none}
+nav a{font-weight:600;font-size:16px;text-decoration:none;color:var(--navy);margin-left:24px}
+nav a:hover{color:var(--blue)}
+.hphone{display:flex;align-items:center;gap:10px;background:var(--sun);color:var(--navy);text-decoration:none;padding:7px 14px;border-radius:10px;box-shadow:0 2px 0 var(--sun-d);line-height:1.1;white-space:nowrap}
+.hphone svg{width:20px;height:20px}
+.hphone small{display:none;font-size:12px;font-weight:600}
+.hphone b{font-size:19px;font-weight:800;letter-spacing:.01em}
+
+/* hero */
+.hero{background:var(--blue-l);padding:36px 0 44px;border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;gap:30px}
+.hero h1{font-size:clamp(32px,8.4vw,52px);margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero .lead{font-size:18px;color:var(--muted);max-width:540px;margin:0 0 24px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.ctas .btn{flex:1 1 220px}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.checks li{display:flex;gap:12px;align-items:center;font-weight:600}
+.checks svg{width:24px;height:24px;flex:none;fill:var(--blue)}
+.slot{background:#fff;border:2px dashed #9dbbd8;border-radius:16px;padding:10px}
+.slot .in{background:var(--blue-ll);border-radius:10px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;color:var(--blue);padding:20px}
+.slot svg{width:54px;height:54px}
+.slot strong{font-size:20px;color:var(--navy)}
+.slot span{font-size:15px;color:var(--muted)}
+
+/* sluzby */
+.services{display:grid;gap:18px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px 24px;border-top:5px solid var(--blue);display:flex;flex-direction:column;gap:10px;box-shadow:0 2px 10px rgba(15,34,56,.05)}
+.ico{width:60px;height:60px;border-radius:14px;background:var(--blue-l);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+.ico svg{width:36px;height:36px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:26px}
+.svc p{margin:0;color:var(--muted)}
+.svc ul{list-style:none;margin:4px 0 12px;padding:0;display:grid;gap:8px}
+.svc li{padding-left:28px;position:relative}
+.svc li:before{content:"";position:absolute;left:0;top:5px;width:18px;height:18px;border-radius:50%;background:var(--blue-l) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%230a5fa8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat}
+.svc .btn{margin-top:auto;align-self:flex-start}
+
+/* reference */
+.ref{background:var(--blue-ll);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ph{position:relative;overflow:hidden;background:#cfdbe8;margin:0;border-radius:12px}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph figcaption{position:absolute;left:0;bottom:0;right:0;padding:26px 12px 9px;font-size:13px;line-height:1.3;color:#fff;background:linear-gradient(to top,rgba(8,26,46,.8),rgba(8,26,46,0))}
+.mal{display:grid;gap:10px;margin-bottom:28px}
+.mal .big{aspect-ratio:16/10}
+.mal .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mal .pair .ph{aspect-ratio:4/3}
+.mal-text{background:#fff;border:1px solid var(--line);border-left:5px solid var(--sun);border-radius:12px;padding:18px 20px}
+.mal-text h3{font-size:24px;margin-bottom:6px}
+.mal-text p{margin:0;color:var(--muted)}
+.reflist-h{font-size:18px;margin:0 0 12px}
+.reflist{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.reflist li{background:#fff;border:1px solid var(--line);border-radius:99px;padding:7px 14px;font-size:15px;font-weight:500}
+
+/* galerie */
+.strip{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.strip .ph{aspect-ratio:1/1}
+.strip .ph.wide,.strip .ph.last{grid-column:span 2;aspect-ratio:16/9}
+
+/* postup */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.step{background:var(--blue-ll);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 78px;position:relative}
+.step:before{content:counter(s);counter-increment:s;position:absolute;left:18px;top:18px;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center}
+.step h4{font-size:19px;margin-bottom:2px}
+.step p{margin:0;color:var(--muted);font-size:16px}
+
+/* recenze */
+.rev{background:var(--blue-ll);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.score{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin:20px 0 26px}
+.score .num{font-weight:800;font-size:76px;line-height:.9;color:var(--navy)}
+.stars{display:inline-flex;gap:3px}
+.stars svg{width:24px;height:24px;fill:#fbbc04}
+.score .meta{display:grid;gap:6px}
+.score .meta>span{font-size:16px;font-weight:600}
+.gword{display:inline-flex;align-items:center;gap:9px;font-family:'Product Sans','Google Sans',Arial,sans-serif;font-size:22px;font-weight:500;letter-spacing:-.2px;line-height:1}
+.gword svg{width:26px;height:26px}
+.gword .b{color:#4285f4}.gword .r{color:#ea4335}.gword .y{color:#fbbc05}.gword .g{color:#34a853}
+.rcards{display:grid;gap:12px;margin-bottom:26px}
+.rc{background:#fff;border:1px solid var(--line);padding:18px 18px 20px;border-radius:14px;position:relative}
+.rc .top{display:flex;align-items:center;gap:12px;margin-bottom:10px;padding-right:26px}
+.av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex:none}
+.rc .who{font-weight:700;line-height:1.25;font-size:16px}
+.rc .who small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.rc .stars svg{width:18px;height:18px}
+.rc p{margin:10px 0 0;font-size:16px}
+.rc .gmini{position:absolute;right:14px;top:14px;width:20px;height:20px}
+
+/* faq */
+details{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;background:#fff}
+summary{list-style:none;cursor:pointer;padding:16px 52px 16px 18px;font-weight:700;font-size:18px;position:relative;line-height:1.3}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:14px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:var(--blue-l);color:var(--blue);font-weight:700;font-size:20px;display:flex;align-items:center;justify-content:center}
+details[open] summary:after{content:"–"}
+details p{margin:0;padding:0 18px 18px;color:var(--muted);max-width:660px}
+
+/* poptavka */
+.ask{background:var(--blue);color:#fff}
+.ask h2{color:#fff}
+.ask .kick{background:rgba(255,255,255,.15);color:#fff}
+.ask .sub{color:#d7e8f8;margin-bottom:22px}
+.form-wrap{display:grid;gap:30px}
+.contact-list{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.contact-list li{background:rgba(255,255,255,.1);border-radius:12px;padding:12px 16px;font-size:14px;color:#d7e8f8;display:grid;gap:0}
+.contact-list a,.contact-list .plain{font-weight:800;font-size:22px;color:#fff;text-decoration:none;word-break:break-word}
+.contact-list a:hover{text-decoration:underline}
+form{background:#fff;color:var(--navy);padding:24px 20px;display:grid;gap:14px;border-radius:16px;border-top:6px solid var(--sun)}
+label{font-size:14px;font-weight:700;display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:16px;padding:12px 13px;border:1px solid #b7c9db;border-radius:8px;background:#fff;width:100%;color:var(--navy)}
+textarea{min-height:110px;resize:vertical}
+.row2{display:grid;gap:14px}
+form .btn{width:100%}
+
+footer{background:var(--navy);color:#a9bacb;padding:30px 0 100px;font-size:14px}
+footer .wrap{display:grid;gap:14px}
+footer b{color:#fff;font-size:18px}
+footer a{text-decoration:none;color:#fff}
+
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;gap:8px;padding:10px;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(15,34,56,.12)}
+.callbar a{flex:1}
+
+@media (min-width:640px){
+ .topbar span.t2{display:inline}
+ .topbar .wrap>span:first-child{display:inline}
+ .topbar .wrap{justify-content:space-between;text-align:left}
+ .logo small{display:block}
+ .hphone small{display:block}
+ .strip{grid-template-columns:repeat(6,1fr)}
+ .strip .ph{grid-column:span 2;aspect-ratio:4/3}
+ .strip .ph.wide{grid-column:span 4;aspect-ratio:auto}
+ .strip .ph.last{grid-column:span 2;aspect-ratio:4/3}
+ .strip .ph.tall{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+ .strip .ph.full{grid-column:span 6;aspect-ratio:21/8}
+ .row2{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+}
+@media (min-width:900px){
+ body{font-size:18px}
+ nav{display:block}
+ .callbar{display:none}
+ footer{padding-bottom:30px}
+ footer .wrap{grid-template-columns:1fr auto;align-items:end}
+ section{padding:84px 0}
+ .hero{padding:64px 0 72px}
+ .hero .wrap{grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+ .ctas .btn{flex:0 0 auto}
+ .services{grid-template-columns:repeat(3,1fr);gap:24px}
+ .mal{grid-template-columns:1.5fr 1fr;gap:12px}
+ .mal .big{aspect-ratio:auto;grid-row:span 2;min-height:400px}
+ .mal .pair{grid-template-columns:1fr;grid-template-rows:1fr 1fr}
+ .mal .pair .ph{aspect-ratio:auto}
+ .mal-text{grid-column:1/-1}
+ .steps{grid-template-columns:repeat(4,1fr);gap:20px}
+ .step{padding:84px 18px 20px}
+ .step:before{left:18px;top:20px}
+ .rcards{grid-template-columns:repeat(3,1fr)}
+ .form-wrap{grid-template-columns:1fr 1.25fr;gap:60px;align-items:start}
+ form{padding:32px}
+}
+@media (max-width:420px){.logo{font-size:17px;gap:8px}.logo svg{width:30px;height:30px}.hphone{padding:8px 11px;gap:7px}.hphone b{font-size:17px}header .wrap{gap:8px}}
+.upload{display:flex!important;flex-direction:row!important;align-items:center;gap:10px;padding:14px 16px;border:1.5px dashed #9db7d3;border-radius:10px;background:#f4f8fc;color:#0a5fa8;font-weight:600;cursor:pointer}
+.upload:hover{background:#eaf2fa}
+.upload input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.upload:focus-within{outline:2px solid #0a5fa8;outline-offset:2px}
+/* ukazky */
+.slots{display:grid;gap:14px}
+.slots .slot{background:#fff}
+.slots .slot strong{font-size:18px}
+@media (min-width:640px){.slots{grid-template-columns:repeat(3,1fr)}}
+.rev .score{margin-bottom:22px}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="st" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol>
+ <symbol id="g" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></symbol>
+ <symbol id="ck" viewBox="0 0 24 24"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm-1.6 15.6l-4.2-4.2 1.5-1.5 2.7 2.7 6-6 1.5 1.5z"/></symbol>
+ <symbol id="ph" viewBox="0 0 24 24"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></symbol>
+ <symbol id="cam" viewBox="0 0 24 24"><path d="M4 8h3l1.5-2.5h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13.5" r="3.6" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+</svg>
+
+<div class="topbar"><div class="wrap"><span>Instalatér · Topenář</span><span><span class="t2">Působíme: </span>Brno a okolí</span></div></div>
+<header>
+ <div class="wrap">
+  <a class="logo" href="#" aria-label="Lubomír Vančura – na začátek">
+   <svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#0a5fa8"/><path d="M20 7c5 6.5 9 11 9 16a9 9 0 0 1-18 0c0-5 4-9.5 9-16z" fill="#fff"/><path d="M15.5 24a4.5 4.5 0 0 0 4 4.4" fill="none" stroke="#0a5fa8" stroke-width="2" stroke-linecap="round"/></svg>
+   <span>Lubomír Vančura<small>Lumec · voda a topení</small></span>
+  </a>
+  <nav><a href="#sluzby">Služby</a><a href="#ukazky">Ukázky</a><a href="#postup">Jak to probíhá</a><a href="#recenze">Recenze</a><a href="#poptavka">Poptávka</a></nav>
+  <a class="hphone" href="tel:+420774568769"><svg><use href="#ph"/></svg><span><small>Zavolejte:</small><b>774 568 769</b></span></a>
+ </div>
+</header>
+
+<main>
+<div class="hero">
+ <div class="wrap">
+  <div>
+   <p class="kick">Brno a okolí</p>
+   <h1>Instalatér a topenář <em>– Brno a okolí</em></h1>
+   <p class="lead">Vodoinstalatérské a topenářské práce pro byty i rodinné domy. Od výměny baterie přes rekonstrukci koupelny až po tepelné čerpadlo.</p>
+   <div class="ctas">
+    <a class="btn btn-s" href="tel:+420774568769"><svg><use href="#ph"/></svg>Zavolat 774 568 769</a>
+    <a class="btn btn-o" href="#poptavka">Poslat poptávku s fotkou</a>
+   </div>
+   <ul class="checks">
+    <li><svg aria-hidden="true"><use href="#ck"/></svg>V oboru od roku 1997</li>
+    <li><svg aria-hidden="true"><use href="#ck"/></svg>5,0 ★ na Googlu</li>
+    <li><svg aria-hidden="true"><use href="#ck"/></svg>Nezávazná kalkulace zdarma</li>
+   </ul>
+  </div>
+  <div class="slot" role="img" aria-label="Místo pro vaši fotku">
+   <div class="in">
+    <svg aria-hidden="true"><use href="#cam"/></svg>
+    <strong>Místo pro vaši fotku</strong>
+    <span>např. vy při práci nebo hotová koupelna</span>
+   </div>
+  </div>
+ </div>
+</div>
+
+<section id="sluzby">
+ <div class="wrap">
+  <p class="kick">Co děláme</p>
+  <h2>Voda, topení, koupelny</h2>
+  <p class="sub">Brno a okolí, po domluvě i větší zakázky mimo Brno. Poradíme, navrhneme řešení a připravíme nezávaznou kalkulaci.</p>
+  <div class="services">
+   <div class="svc">
+    <div class="ico"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 4c6 7.5 10 12 10 17.5a10 10 0 0 1-20 0C8 16 12 11.5 18 4z"/><path d="M13 22a5 5 0 0 0 4.5 4.9"/></svg></div>
+    <h3>Instalatérské práce</h3>
+    <ul><li>montáže praček a myček včetně úprav vodovodního a odpadního potrubí</li><li>výměny záchodů, van, sprchových koutů, umyvadel, dřezů a baterií</li><li>rozvody vody v mědi i plastu</li></ul>
+    <a class="btn btn-b" href="#poptavka" data-sluzba="Instalatérské práce">Poptat</a>
+   </div>
+   <div class="svc">
+    <div class="ico"><svg viewBox="0 0 36 36" aria-hidden="true"><rect x="4" y="9" width="28" height="18" rx="3"/><path d="M11 9v18M18 9v18M25 9v18"/><path d="M8 27v3M28 27v3"/></svg></div>
+    <h3>Topení a kotle</h3>
+    <ul><li>výměny kotlů a radiátorů</li><li>regulace topných systémů</li><li>výměny oběhových čerpadel a termostatických ventilů, odvzdušnění</li><li>rozvody topení v mědi i plastu</li></ul>
+    <a class="btn btn-b" href="#poptavka" data-sluzba="Topení a kotle">Poptat</a>
+   </div>
+   <div class="svc">
+    <div class="ico"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M4 18h28v4a7 7 0 0 1-7 7H11a7 7 0 0 1-7-7z"/><path d="M8 18V8a3 3 0 0 1 6 0"/><path d="M11 29l-1.5 3M25 29l1.5 3"/></svg></div>
+    <h3>Rekonstrukce koupelen</h3>
+    <ul><li>instalatérské a topenářské práce</li><li>zednické práce</li><li>elektro práce</li></ul>
+    <a class="btn btn-b" href="#poptavka" data-sluzba="Rekonstrukce koupelny">Poptat</a>
+   </div>
+   <div class="svc">
+    <div class="ico"><svg viewBox="0 0 36 36" aria-hidden="true"><circle cx="18" cy="13" r="5"/><path d="M18 3v2.5M18 20.5V23M8 13h2.5M25.5 13H28M11 6l1.8 1.8M23.2 18.2L25 20M11 20l1.8-1.8M23.2 7.8L25 6"/><path d="M5 33l3-7h20l3 7z"/><path d="M14 26l-1 7M22 26l1 7"/></svg></div>
+    <h3>Tepelná čerpadla a solár</h3>
+    <ul><li>montáž a projekce tepelných čerpadel</li><li>montáž a projekce solárních panelů</li></ul>
+    <a class="btn btn-b" href="#poptavka" data-sluzba="Tepelné čerpadlo / solár">Poptat</a>
+   </div>
+   <div class="svc">
+    <div class="ico"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 4c1 5 7 8 7 14a7 7 0 0 1-14 0c0-3 1.5-5 3-6.5.4 2 1.2 3 2.4 3.5C16 11 16 7.5 18 4z"/><path d="M4 31h28"/><path d="M7 31c1.5-2 3-2 4.5 0s3 2 4.5 0 3-2 4.5 0 3 2 4.5 0 3-2 4.5 0" transform="translate(0 -3)"/></svg></div>
+    <h3>Podlahové topení a krby</h3>
+    <ul><li>montáž a projekce podlahového vytápění</li><li>krby s topnou vložkou</li></ul>
+    <a class="btn btn-b" href="#poptavka" data-sluzba="Podlahové topení / krb">Poptat</a>
+   </div>
+   <div class="svc">
+    <div class="ico"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M9 4h13l6 6v22H9z"/><path d="M22 4v6h6"/><path d="M13.5 22l3 3 6-7"/></svg></div>
+    <h3>Dotace</h3>
+    <p>Nová zelená úsporám</p>
+    <ul><li>po domluvě vyřídíme státní dotaci Nová zelená úsporám</li></ul>
+    <a class="btn btn-b" href="#poptavka" data-sluzba="Dotace">Zeptat se</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="ref" id="ukazky">
+ <div class="wrap">
+  <p class="kick">Z práce</p>
+  <h2>Ukázky práce</h2>
+  <p class="sub">Zde budou fotky hotových realizací.</p>
+  <div class="slots">
+   <div class="slot" role="img" aria-label="Místo pro fotky vašich realizací"><div class="in"><svg aria-hidden="true"><use href="#cam"/></svg><strong>Místo pro fotky vašich realizací</strong></div></div>
+   <div class="slot" role="img" aria-label="Místo pro fotky vašich realizací"><div class="in"><svg aria-hidden="true"><use href="#cam"/></svg><strong>Místo pro fotky vašich realizací</strong></div></div>
+   <div class="slot" role="img" aria-label="Místo pro fotky vašich realizací"><div class="in"><svg aria-hidden="true"><use href="#cam"/></svg><strong>Místo pro fotky vašich realizací</strong></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="postup">
+ <div class="wrap">
+  <p class="kick">Postup</p>
+  <h2>Jak to probíhá</h2>
+  <p class="sub">Nemusíte nic složitě popisovat. Stačí fotka.</p>
+  <ol class="steps">
+   <li class="step"><h4>Pošlete fotku</h4><p>Přes formulář níže, nebo rovnou zavolejte.</p></li>
+   <li class="step"><h4>Ozveme se</h4><p>Doptáme se na detaily, případně se přijedeme podívat.</p></li>
+   <li class="step"><h4>Kalkulace</h4><p>Dostanete nezávaznou cenu předem.</p></li>
+   <li class="step"><h4>Realizace</h4><p>Domluvíme termín a práci uděláme pečlivě.</p></li>
+  </ol>
+ </div>
+</section>
+
+<section class="rev" id="recenze">
+ <div class="wrap">
+  <p class="kick">Hodnocení zákazníků</p>
+  <h2>Hodnocení na Googlu</h2>
+  <div class="score">
+   <div class="num">5,0</div>
+   <div class="meta">
+    <div class="stars" role="img" aria-label="5 z 5 hvězdiček"><svg aria-hidden="true"><use href="#st"/></svg><svg aria-hidden="true"><use href="#st"/></svg><svg aria-hidden="true"><use href="#st"/></svg><svg aria-hidden="true"><use href="#st"/></svg><svg aria-hidden="true"><use href="#st"/></svg></div>
+    <span class="gword" aria-label="Google"><svg aria-hidden="true"><use href="#g"/></svg><span><span class="b">G</span><span class="r">o</span><span class="y">o</span><span class="b">g</span><span class="g">l</span><span class="r">e</span></span></span>
+   </div>
+  </div>
+  <a class="btn btn-o" href="https://www.google.com/maps/place/?q=place_id:ChIJ57dZwOOUEkcR2CxeVQOj_Yk" target="_blank" rel="noopener">Zobrazit na Googlu</a>
+ </div>
+</section>
+
+<section id="faq">
+ <div class="wrap">
+  <p class="kick">Otázky</p>
+  <h2>Časté otázky</h2>
+  <div style="margin-top:24px">
+   <details><summary>Kolik to stojí?</summary><p>Záleží na rozsahu. Pošlete fotku nebo zavolejte a připravíme nezávaznou kalkulaci zdarma.</p></details>
+   <details><summary>Kde působíte?</summary><p>V Brně a okolí. Po domluvě i větší zakázky mimo Brno.</p></details>
+   <details><summary>Pomůžete s dotací?</summary><p>Po domluvě vyřídíme dotaci Nová zelená úsporám.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="ask" id="poptavka">
+ <div class="wrap form-wrap">
+  <div>
+   <p class="kick">Kontakt</p>
+   <h2>Poptávka</h2>
+   <p class="sub">Napište, co potřebujete, a přiložte fotku. Ozveme se co nejdřív.</p>
+   <ul class="contact-list">
+    <li>Telefon <a href="tel:+420774568769">774 568 769</a></li>
+    <li>E-mail <a href="mailto:lumec@seznam.cz">lumec@seznam.cz</a></li>
+    <li>Adresa <span class="plain">Elišky Krásnohorské 996/24b, 618 00 Brno-Černovice</span></li>
+   </ul>
+  </div>
+  <form action="https://formsubmit.co/lumec@seznam.cz" method="POST" enctype="multipart/form-data">
+   <input type="hidden" name="_subject" value="Nová poptávka z webu">
+   <input type="hidden" name="_captcha" value="false">
+   <input type="hidden" name="_template" value="table">
+   <input type="text" name="_honey" style="display:none">
+   <div class="row2">
+    <label>Jméno<input name="jmeno" required autocomplete="name"></label>
+    <label>Telefon<input name="telefon" type="tel" required autocomplete="tel"></label>
+   </div>
+   <div class="row2">
+    <label>Obec<input name="obec" required></label>
+    <label>Co potřebujete<select name="sluzba" id="sluzba"><option>Instalatérské práce</option><option>Topení a kotle</option><option>Rekonstrukce koupelny</option><option>Tepelné čerpadlo / solár</option><option>Podlahové topení / krb</option><option>Dotace</option><option>Jiné</option></select></label>
+   </div>
+   <label>Popis<textarea name="popis" placeholder="Např. chci vyměnit kotel, předělat koupelnu, zapojit myčku…"></textarea></label>
+   <label class="upload"><input type="file" name="foto" accept="image/*"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg><span class="up-t">Přidat fotku (nepovinné)</span></label>
+   <button class="btn btn-s" type="submit">Odeslat poptávku</button>
+  </form>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div><b>Lubomír Vančura – Lumec</b><br>Voda, topení<br>IČO 66565111 · Elišky Krásnohorské 996/24b, 618 00 Brno-Černovice</div>
+  <div><a href="tel:+420774568769">774 568 769</a> · <a href="mailto:lumec@seznam.cz">lumec@seznam.cz</a></div>
+ </div>
+</footer>
+
+<div class="callbar">
+ <a class="btn btn-s" href="tel:+420774568769"><svg><use href="#ph"/></svg>Zavolat</a>
+ <a class="btn btn-o" href="#poptavka">Poptávka</a>
+</div>
+
+<script>
+document.querySelectorAll('[data-sluzba]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('sluzba').value=a.dataset.sluzba}));
+document.querySelectorAll('.upload input').forEach(i=>i.addEventListener('change',()=>{const t=i.closest('.upload').querySelector('.up-t');t.textContent=i.files.length?('Vybráno: '+i.files[0].name):'Přidat fotku (nepovinné)'}));
+</script>
+</body>
+</html>
